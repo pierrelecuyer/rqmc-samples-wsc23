@@ -44,5 +44,6 @@ we wanted to compute a confidence interval for a given $R$, we just drew a sampl
 This is much faster and almost thge same as generating fresh samples. 
 
 The main purpose of this GitHub site is to provide the files that contain the $N$ independent RQMC realizations for each
-of the 600 cases.  
+of the 600 cases.  Each of the 600 files contains $N = 10,000$ real numbers $y_1, \ldots, y_N$, one per line, and nothing else.
+The file name indicates the case. 
 
