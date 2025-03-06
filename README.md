@@ -22,8 +22,8 @@ The selected functions $f$ were
 * PieceLinGauss:
   $f(\mathbf{u}) = \max\left( d^{-1/2}\sum_{j=1}^d\Phi^{-1}(u_j)-\tau,0\right) - \varphi(\tau)+\tau\Phi(-\tau)$;
 * IndSumNormal:
-  $f(\mathbf{u}) = - \Phi(-\tau) + \II\{ d^{-1/2}\sum_{j=1}^d\Phi^{-1}(u_j)\ge\tau\}$
-  where $\II$ is the indicator function;
+  $f(\mathbf{u}) = - \Phi(-\tau) + \mathbb{I}\{ d^{-1/2}\sum_{j=1}^d\Phi^{-1}(u_j)\ge\tau\}$
+  where $\mathbb{I}$ is the indicator function;
 * SmoothGauss:
   $f(\mathbf{u}) = -\Phi( 1/\sqrt{2}) + {d^{-1/2} \sum_{j=1}^d \Phi(1 + \Phi^{-1}(u_j))}$;
 * RidgeJohnsonSU:
