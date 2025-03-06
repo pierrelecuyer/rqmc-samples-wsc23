@@ -31,4 +31,17 @@ The selected functions $f$ were
   where $F$ is the CDF of the Johnson's SU distribution with parameters
   $\gamma=\delta=\lambda=1$, $\xi=0$, and $\eta$ is the mean of that distribution.
 
-  
+Our experiment had two stages. In the first stage, for each of the $6\times 5\times 5\times 4 = 600$ combination of ($f$, method, $k$, $d$), 
+we generated a pool of $N = 10,000$ independent realizations $y_1, \ldots, y_N$ of the RQMC estimator and stored the sorted values in files.
+We did this in Java by using the packages \texttt{hups} and \texttt{mcqmctools} from the 
+[SSJ library](https://github.com/umontreal-simul/ssj). We think that each of these large samples is highly representative of the true 
+distribution of the corresponding RQMC estimator, so we can look at its empirical variance, skewness, kurtosis, and histogram,
+to assess the properties of the RQMC estimator.
+
+In the second stage, for each of the 600 cases, we used the empirical distribution of these $N$ realizations 
+in place of the true distribution of the RQMC estimator. That is, instead of generating new RQMC samples each time
+we wanted to compute a confidence interval for a given $R$, we just drew a sample of size $R$ from the pool of size $N$.
+This is much faster and almost thge same as generating fresh samples. 
+
+
+
