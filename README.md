@@ -43,5 +43,6 @@ in place of the true distribution of the RQMC estimator. That is, instead of gen
 we wanted to compute a confidence interval for a given $R$, we just drew a sample of size $R$ from the pool of size $N$.
 This is much faster and almost thge same as generating fresh samples. 
 
-
+The main purpose of this GitHub site is to provide the files that contain the $N$ independent RQMC realizations for each
+of the 600 cases.  
 
