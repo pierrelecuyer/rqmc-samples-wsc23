@@ -16,9 +16,9 @@ we report an extensive experiment that compares different methods to compute a c
   
 The selected functions $f$ were
 * SumUeU:
-  $f(\bm u) = -d + \sum_{j=1}^d u_j\exp(u_j)$;
+  $f(\bf u) = -d + \sum_{j=1}^d u_j\exp(u_j)$;
 * MC2:
-  $f(\bm u) = -1 + (d-1/2)^{{-d}} \prod_{j=1}^d({d-x_j})$;
+  $f(\boldmath{u}) = -1 + (d-1/2)^{{-d}} \prod_{j=1}^d({d-x_j})$;
 * PieceLinGauss:
   $f(\bu) = \max\left( d^{-1/2}\sum_{j=1}^d\Phi^{-1}(u_j)-\tau,0\right) - \varphi(\tau)+\tau\Phi(-\tau)$;
 * IndSumNormal:
