@@ -45,7 +45,7 @@ This is much faster and almost thge same as generating fresh samples.
 
 The main purpose of this GitHub site is to provide the files that contain the $N$ independent RQMC realizations for each
 of the 600 cases.  Each of the 600 files contains $N = 10,000$ real numbers $y_1, \ldots, y_N$, one per line, and nothing else.
-The file names have the form `function`-{$d$}-`method`-{$k$-$N$}.`dat`, where `function` is the function name and `method` is the method name.
+The file names have the form $f$-$d$-method-$k$-$N$.dat, where `function` is the function name and `method` is the method name.
 For example, the file `PiecewiseLinGaus-8-Sob-LMS-16-10000.dat` contains the $N$ values for the function PiecewiseLinGaus in $d=8$ dimensions,
 for Sobol points with LMS, with $2^{16}$ points.  All these files are in directory `RepsRQMC`.
 
