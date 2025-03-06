@@ -16,18 +16,18 @@ we report an extensive experiment that compares different methods to compute a c
   
 The selected functions $f$ were
 * SumUeU:
-  $f(\bf u) = -d + \sum_{j=1}^d u_j\exp(u_j)$;
+  $f(\mathbf{u}) = -d + \sum_{j=1}^d u_j\exp(u_j)$;
 * MC2:
   $f(\mathbf{u}) = -1 + (d-1/2)^{{-d}} \prod_{j=1}^d({d-x_j})$;
 * PieceLinGauss:
-  $f(\bu) = \max\left( d^{-1/2}\sum_{j=1}^d\Phi^{-1}(u_j)-\tau,0\right) - \varphi(\tau)+\tau\Phi(-\tau)$;
+  $f(\mathbf{u}) = \max\left( d^{-1/2}\sum_{j=1}^d\Phi^{-1}(u_j)-\tau,0\right) - \varphi(\tau)+\tau\Phi(-\tau)$;
 * IndSumNormal:
-  $f(\bu) = - \Phi(-\tau) + \II\{ d^{-1/2}\sum_{j=1}^d\Phi^{-1}(u_j)\ge\tau\}$
+  $f(\mathbf{u}) = - \Phi(-\tau) + \II\{ d^{-1/2}\sum_{j=1}^d\Phi^{-1}(u_j)\ge\tau\}$
   where $\II$ is the indicator function;
 * SmoothGauss:
-  $f(\bu) = -\Phi( 1/\sqrt{2}) + {d^{-1/2} \sum_{j=1}^d \Phi(1 + \Phi^{-1}(u_j))}$;
+  $f(\mathbf{u}) = -\Phi( 1/\sqrt{2}) + {d^{-1/2} \sum_{j=1}^d \Phi(1 + \Phi^{-1}(u_j))}$;
 * RidgeJohnsonSU:
-  $f(\bu) = -\eta+F^{-1}(\Phi(d^{-1/2}\sum_{j=1}^d \Phi^{-1}(u_j)))$
+  $f(\mathbf{u}) = -\eta+F^{-1}(\Phi(d^{-1/2}\sum_{j=1}^d \Phi^{-1}(u_j)))$
   where $F$ is the CDF of the Johnson's SU distribution with parameters
   $\gamma=\delta=\lambda=1$, $\xi=0$, and $\eta$ is the mean of that distribution.
 
