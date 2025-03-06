@@ -1,5 +1,5 @@
 # RQMC-samples-wsc23
-Randomized quasi-Monte Carlo data for small function examples
+Randomized quasi-Monte Carlo (RQMC) data for small function examples
 
 ## What this repository is about
 In the paper 
@@ -33,7 +33,7 @@ The selected functions $f$ were
 
 Our experiment had two stages. In the first stage, for each of the $6\times 5\times 5\times 4 = 600$ combination of ($f$, method, $k$, $d$), 
 we generated a pool of $N = 10,000$ independent realizations $y_1, \ldots, y_N$ of the RQMC estimator and stored the sorted values in files.
-We did this in Java by using the packages \texttt{hups} and \texttt{mcqmctools} from the 
+We did this in Java by using the packages `hups` and `mcqmctools` from the 
 [SSJ library](https://github.com/umontreal-simul/ssj). We think that each of these large samples is highly representative of the true 
 distribution of the corresponding RQMC estimator, so we can look at its empirical variance, skewness, kurtosis, and histogram,
 to assess the properties of the RQMC estimator.
@@ -49,3 +49,7 @@ The file names have the form `function-d-method-k-N.dat`, where `function` is th
 For example, the file `PiecewiseLinGaus-8-Sob-LMS-16-10000.dat` contains the $N=10,000$ values for the function PiecewiseLinGaus in $d=8$ dimensions,
 for Sobol points with LMS, with $2^{16}$ points.  All these files are in directory `RepsRQMC`.
 
+- other files for histograms
+
+- also on Dropbox
+  
