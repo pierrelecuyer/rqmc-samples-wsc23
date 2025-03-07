@@ -1,6 +1,5 @@
 package experiments;
 
-import umontreal.ssj.mcqmctools.MonteCarloModelDouble;
 import umontreal.ssj.rng.RandomStream;
 
 // Experiments for WSC 2023 paper

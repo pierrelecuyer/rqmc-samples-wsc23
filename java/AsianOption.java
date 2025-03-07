@@ -3,7 +3,6 @@ package experiments;
 
 // import umontreal.ssj.mcqmctools.MonteCarloModelDoubleTag;
 import umontreal.ssj.rng.RandomStream;
-import umontreal.ssj.stat.Tally;
 import umontreal.ssj.stochprocess.StochasticProcess;
 
 /**
