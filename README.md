@@ -38,18 +38,23 @@ We did this in Java by using the packages `hups` and `mcqmctools` from the
 distribution of the corresponding RQMC estimator, so we can look at its empirical variance, skewness, kurtosis, and histogram,
 to assess the properties of the RQMC estimator.
 
-In the second stage, for each of the 600 cases, we used the empirical distribution of these $N$ realizations 
-in place of the true distribution of the RQMC estimator. That is, instead of generating new RQMC samples each time
+In the second stage, when computing confidence intervals to assess their qualities, we used the empirical distribution of these $N$ realizations 
+in place of the true distribution of the RQMC estimator. That is, for each of the 600 cases, instead of generating new RQMC samples each time
 we wanted to compute a confidence interval for a given $R$, we just drew a sample of size $R$ from the pool of size $N$.
-This is much faster and almost thge same as generating fresh samples. 
+This is much faster and almost the same as generating fresh samples. 
 
 The main purpose of this GitHub site is to provide the files that contain the $N$ independent RQMC realizations for each
-of the 600 cases.  Each of the 600 files contains $N = 10,000$ real numbers $y_1, \ldots, y_N$, one per line, and nothing else.
+of the 600 cases examined in the paper.  There are actually more files because we provide results for two more functions that were not in the paper.  
+Each file contains $N = 10,000$ real numbers $y_1, \ldots, y_N$, one per line, and nothing else.
 The file names have the form `function-d-method-k-N.dat`, where `function` is the function name and `method` is the method name.
 For example, the file `PiecewiseLinGaus-8-Sob-LMS-16-10000.dat` contains the $N=10,000$ values for the function PiecewiseLinGaus in $d=8$ dimensions,
 for Sobol points with LMS, with $2^{16}$ points.  All these files are in directory `RepsRQMC`.
+Alternatively, these files are also available in Dropbox at 
+[this link](https://www.dropbox.com/scl/fo/cs43u4eq01or9lhu3qm1r/AIbwuW8xQG94LqsW0vvBNPs?rlkey=2lm9pm3i1r51gntlcs0qdr946&st=4hegr4yj&dl=0).
 
-- other files for histograms
+The Java code used to produce all these results is in the `java` directory.  To run it, one must first 
+install SSJ by following the instructions given in the README of the [SSJ library](https://github.com/umontreal-simul/ssj)
+and run the Java code by using SSJ.  The easiest way is to create a Maven project as described there.
+The main program is `WSC23RepsRQMC.java`.  Other functions can be added easily.
 
-- also on Dropbox
   
