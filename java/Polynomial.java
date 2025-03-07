@@ -1,44 +1,45 @@
 package experiments;
 
-import umontreal.ssj.mcqmctools.MonteCarloModelDouble;
+//import umontreal.ssj.mcqmctools.MonteCarloModelDouble;
 import umontreal.ssj.rng.RandomStream;
 
-// Experiments for WSC 2023 paper
+// Experiments for WSC 2024 paper.
 
-public class MC2 implements MonteCarloModelDoubleTag {
+public class Polynomial implements MonteCarloModelDoubleTag {
 
    int s;
-   double ds, ds2, prod;
+   double prod;
+   double[] a;
 
    // Constructor.
-   public MC2(int s) {
+   public Polynomial(int s) {
       this.s = s;
-      ds = (double) s;
-      ds2 = 1.0 / (ds - 0.5);
+      a = new double[s];
+      for (int j = 0; j < s; j++)
+         a[j] = (double) j / (double) s;
    }
 
    // Generates and returns X, without IS.
    public void simulate(RandomStream stream) {
       prod = 1.0;
       for (int j = 0; j < s; j++) {
-         prod *= (ds - stream.nextDouble()) * ds2;
-         // prod *= (s-stream.nextDouble()) / (s - 0.5);
+         prod *= 1.0 + a[j] * (stream.nextDouble() - 0.5);
       }
    }
 
    // Generates and returns X, without IS.
    public double getPerformance() {
-      return prod - 1.0;
+      return prod;
    }
 
    // Descriptor of this model.
    @Override
    public String toString() {
-      return "Morokoff and Caflisch function";
+      return "Polynomial test function from Genz";
    }
 
    // Short descriptor (tag) for this model.
    public String getTag() {
-      return "MC2";
+      return "Polynomial";
    }
 }

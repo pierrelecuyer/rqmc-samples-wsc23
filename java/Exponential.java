@@ -1,44 +1,42 @@
 package experiments;
 
-import umontreal.ssj.mcqmctools.MonteCarloModelDouble;
+//import umontreal.ssj.mcqmctools.MonteCarloModelDouble;
 import umontreal.ssj.rng.RandomStream;
 
-// Experiments for WSC 2023 paper
+// Experiments for WSC 2023 paper.
 
-public class MC2 implements MonteCarloModelDoubleTag {
+public class Exponential implements MonteCarloModelDoubleTag {
 
    int s;
-   double ds, ds2, prod;
+   double sum;
+   double a = 2.0 / 3.0;
 
    // Constructor.
-   public MC2(int s) {
+   public Exponential(int s) {
       this.s = s;
-      ds = (double) s;
-      ds2 = 1.0 / (ds - 0.5);
    }
 
    // Generates and returns X, without IS.
    public void simulate(RandomStream stream) {
-      prod = 1.0;
+      sum = 0.0;
       for (int j = 0; j < s; j++) {
-         prod *= (ds - stream.nextDouble()) * ds2;
-         // prod *= (s-stream.nextDouble()) / (s - 0.5);
+         sum += stream.nextDouble();
       }
    }
 
    // Generates and returns X, without IS.
    public double getPerformance() {
-      return prod - 1.0;
+      return Math.exp(a * sum);
    }
 
    // Descriptor of this model.
    @Override
    public String toString() {
-      return "Morokoff and Caflisch function";
+      return "Exponential: exponential of a sum of uniforms over [0,a]";
    }
 
    // Short descriptor (tag) for this model.
    public String getTag() {
-      return "MC2";
+      return "Exponential";
    }
 }

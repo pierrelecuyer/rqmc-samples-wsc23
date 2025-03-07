@@ -7,36 +7,36 @@ import umontreal.ssj.rng.RandomStream;
 
 public class SumUeU implements MonteCarloModelDoubleTag {
 
-	int s;
-	double sum, u;
+   int s;
+   double sum, u;
 
-	// Constructor.
-	public SumUeU(int s) {
-		this.s = s;
-	}
+   // Constructor.
+   public SumUeU(int s) {
+      this.s = s;
+   }
 
-	// Generates and returns X, without IS.
-	public void simulate (RandomStream stream) {
-		sum = 0.0;
-		for (int j = 0; j < s; j++) {
-			u = stream.nextDouble();
-			sum += u * Math.exp(u);
-		}
-	}
+   // Generates and returns X, without IS.
+   public void simulate(RandomStream stream) {
+      sum = 0.0;
+      for (int j = 0; j < s; j++) {
+         u = stream.nextDouble();
+         sum += u * Math.exp(u);
+      }
+   }
 
-	// Generates and returns X, without IS.
-	public double getPerformance () {
-		return sum - s;
-	}
+   // Generates and returns X, without IS.
+   public double getPerformance() {
+      return sum - s;
+   }
 
-	// Descriptor of this model.
-	@Override
-	public String toString () {
-		return "SumUeU: Sum of U_j exp(U_j)";
-	}
+   // Descriptor of this model.
+   @Override
+   public String toString() {
+      return "SumUeU: Sum of U_j exp(U_j)";
+   }
 
-	// Short descriptor (tag) for this model.
-	public String getTag () {
-		return "SumUeU";
-	}
+   // Short descriptor (tag) for this model.
+   public String getTag() {
+      return "SumUeU";
+   }
 }
