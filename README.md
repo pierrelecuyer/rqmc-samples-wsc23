@@ -52,9 +52,9 @@ for Sobol points with LMS, with $2^{16}$ points.  All these files are in directo
 Alternatively, these files are also available in Dropbox at 
 [this link](https://www.dropbox.com/scl/fo/cs43u4eq01or9lhu3qm1r/AIbwuW8xQG94LqsW0vvBNPs?rlkey=2lm9pm3i1r51gntlcs0qdr946&st=4hegr4yj&dl=0).
 
-The Java code used to produce all these results is in the `java` directory. To run it or add other cases, one must first 
+The Java code used to produce all these results is in the `java` directory.  To run it, one must first 
 install SSJ by following the instructions given in the README of the [SSJ library](https://github.com/umontreal-simul/ssj)
 and run the Java code by using SSJ.  The easiest way is to create a Maven project as described there.
-
+The main program is `WSC23RepsRQMC.java`.  Other functions can be added easily.
 
   
